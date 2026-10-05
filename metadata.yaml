@@ -1,0 +1,38 @@
+name: astrbot_plugin_one_agent
+display_name: 待办事项与提醒
+desc: 功能完整的待办事项管理插件，支持任务、优先级、截止时间、单项提醒、每日提醒、统计、搜索、自助代办，并按会话隔离数据。
+short_desc: 待办、截止时间、提醒、统计、自助代办一站式管理。
+help: |
+  指令示例：
+  - 代办菜单
+  - 待办 高 完成周报
+  - 待办列表 未完成
+  - 完成 1
+  - 编辑 1 完成周报并发送
+  - 优先级 1 高
+  - 截止 1 2026-10-06 18:00
+  - 提醒 1 30分钟
+  - 取消提醒 1
+  - 今日待办
+  - 逾期待办
+  - 我的待办
+  - 搜索待办 周报
+  - 完成率
+  - 待办统计
+  - 自助代办
+  - 放弃代办 1
+  - 删除 1
+  - 清空待办 -> 确认清空
+  - 每日提醒 18:00
+  - 取消每日提醒
+version: 2.0.0
+author: ysgl
+repo: "https://github.com/ysgl870-web/astrbot_plugin_one_agent"
+support_platforms:
+  - aiocqhttp
+  - qq_official
+  - qq_official_webhook
+  - telegram
+  - discord
+  - kook
+astrbot_version: ">=4.16.0"
