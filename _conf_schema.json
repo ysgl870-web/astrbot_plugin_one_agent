@@ -1,116 +1,32 @@
 {
-  "enabled": {
-    "description": "插件总开关",
-    "type": "bool",
-    "default": true,
-    "obvious_hint": true,
-    "hint": "关闭后所有待办命令与后台提醒均停止。"
-  },
-  "admin_qq_ids": {
-    "description": "管理员 QQ 号",
-    "type": "list",
-    "default": [],
-    "hint": "填写可以在聊天中唤出“管理面板/管理设置”的 QQ 号。建议只填可信管理员；例如 [\"123456789\"，\"987654321\"]。"
-  },
-  "admin_only_panel": {
-    "description": "管理面板仅管理员可用",
-    "type": "bool",
-    "default": true,
-    "obvious_hint": true,
-    "hint": "开启后，聊天中输入“管理面板”或“管理设置”必须由上方管理员 QQ 号发起。"
-  },
-  "default_priority": {
-    "description": "默认优先级",
-    "type": "string",
-    "default": "中",
-    "options": ["高", "中", "低"],
-    "hint": "添加待办未指定优先级时使用。"
-  },
-  "max_todos": {
-    "description": "单个会话最大待办数",
-    "type": "int",
-    "default": 200,
-    "slider": {"min": 10, "max": 1000, "step": 10},
-    "hint": "限制单个群聊/私聊会话的待办数量，防止数据无限增长。"
-  },
-  "max_content_length": {
-    "description": "单条待办最大长度",
-    "type": "int",
-    "default": 200,
-    "slider": {"min": 20, "max": 2000, "step": 20},
-    "hint": "超过长度的内容将拒绝创建。"
-  },
-  "auto_assign": {
-    "description": "自助代办功能",
-    "type": "bool",
-    "default": true,
-    "hint": "是否允许普通成员使用“自助代办”。"
-  },
-  "reminder_enabled": {
-    "description": "提醒功能",
-    "type": "bool",
-    "default": true,
-    "obvious_hint": true,
-    "hint": "关闭后“提醒/定时提醒”命令和后台提醒均停止。"
-  },
-  "reminder_check_interval": {
-    "description": "提醒检查间隔（秒）",
-    "type": "int",
-    "default": 20,
-    "slider": {"min": 10, "max": 300, "step": 10},
-    "hint": "后台轮询间隔。数值越小越及时，但轮询更频繁。"
-  },
-  "reminder_send_mode": {
-    "description": "提醒发送方式",
-    "type": "string",
-    "default": "text",
-    "options": ["text", "image", "both"],
-    "hint": "text=纯文字；image=图片卡片；both=文字+图片。图片模式依赖 AstrBot 文转图服务。"
-  },
-  "reminder_prefix": {
-    "description": "提醒标题",
-    "type": "string",
-    "default": "⏰ 待办提醒",
-    "hint": "提醒消息中使用的标题文字。"
-  },
-  "menu_send_mode": {
-    "description": "菜单发送方式",
-    "type": "string",
-    "default": "image",
-    "options": ["text", "image", "both"],
-    "obvious_hint": true,
-    "hint": "推荐群聊使用 image；text 最兼容；both 会同时发送文字和图片。图片模式依赖 AstrBot 文转图服务。"
-  },
-  "menu_include_summary": {
-    "description": "菜单显示当前待办摘要",
-    "type": "bool",
-    "default": true,
-    "hint": "是否在菜单底部附带前 8 项当前待办，群聊太多任务时可关闭。"
-  },
-  "menu_title": {
-    "description": "菜单标题",
-    "type": "string",
-    "default": "📋 待办管理中心",
-    "hint": "文字菜单和图片菜单顶部标题。"
-  },
-  "clear_require_confirm": {
-    "description": "清空待办需要二次确认",
-    "type": "bool",
-    "default": true,
-    "obvious_hint": true,
-    "hint": "推荐开启，先发送“清空待办”，再发送“确认清空”才会真正删除。"
-  },
-  "clear_confirm_seconds": {
-    "description": "清空确认有效期（秒）",
-    "type": "int",
-    "default": 60,
-    "slider": {"min": 10, "max": 600, "step": 10},
-    "hint": "二次确认在此时间内有效。"
-  },
-  "clear_admin_only": {
-    "description": "清空待办仅管理员可用",
-    "type": "bool",
-    "default": false,
-    "hint": "开启后，“清空待办”和“确认清空”需要管理员 QQ 号。"
-  }
+  "enabled": {"description":"插件总开关","type":"bool","default":true,"obvious_hint":true,"hint":"关闭后待办、提醒、小游戏、签到等均停止。"},
+  "admin_qq_ids": {"description":"管理员 QQ 号","type":"list","default":[],"hint":"允许唤出管理面板/管理设置的 QQ 号。可填写多个。"},
+  "admin_only_panel": {"description":"聊天管理面板仅管理员","type":"bool","default":true,"obvious_hint":true,"hint":"管理面板与管理设置需要命中管理员 QQ 白名单。"},
+  "default_priority": {"description":"默认优先级","type":"string","default":"中","options":["高","中","低"]},
+  "max_todos": {"description":"单会话最大待办数","type":"int","default":200,"slider":{"min":10,"max":1000,"step":10}},
+  "max_content_length": {"description":"单条待办最大长度","type":"int","default":200,"slider":{"min":20,"max":2000,"step":20}},
+  "auto_assign": {"description":"允许自助代办","type":"bool","default":true},
+  "reminder_enabled": {"description":"提醒功能","type":"bool","default":true,"obvious_hint":true},
+  "reminder_check_interval": {"description":"提醒检查间隔（秒）","type":"int","default":20,"slider":{"min":10,"max":300,"step":10}},
+  "reminder_send_mode": {"description":"提醒发送方式","type":"string","default":"auto","options":["auto","text","image","markdown","both"],"hint":"auto 按平台选择；QQ Official 可用 markdown；图片依赖文转图。"},
+  "reminder_prefix": {"description":"提醒标题","type":"string","default":"⏰ 待办提醒"},
+  "menu_send_mode": {"description":"菜单发送方式","type":"string","default":"auto","options":["auto","text","image","markdown","ark","keyboard","both"],"obvious_hint":true,"hint":"auto：QQ Official 优先原生消息；其他群聊优先图片。ark/keyboard 需要配置 QQ 模板。"},
+  "menu_include_summary": {"description":"菜单附带当前待办摘要","type":"bool","default":true},
+  "menu_title": {"description":"菜单标题","type":"string","default":"📋 待办管理中心"},
+  "auto_use_image_for_group": {"description":"普通群聊自动使用图片菜单","type":"bool","default":true},
+  "clear_require_confirm": {"description":"清空待办需要二次确认","type":"bool","default":true,"obvious_hint":true},
+  "clear_confirm_seconds": {"description":"清空确认有效期（秒）","type":"int","default":60,"slider":{"min":10,"max":600,"step":10}},
+  "clear_admin_only": {"description":"清空待办仅管理员","type":"bool","default":false},
+  "games_enabled": {"description":"小游戏功能","type":"bool","default":true,"obvious_hint":true},
+  "game_cooldown_seconds": {"description":"小游戏冷却（秒）","type":"int","default":3,"slider":{"min":0,"max":60,"step":1}},
+  "game_daily_limit": {"description":"单用户每日小游戏次数","type":"int","default":50,"slider":{"min":1,"max":500,"step":5}},
+  "checkin_enabled": {"description":"每日签到","type":"bool","default":true},
+  "checkin_base_points": {"description":"签到基础积分","type":"int","default":10,"slider":{"min":0,"max":100,"step":1}},
+  "checkin_random_bonus": {"description":"签到随机加成上限","type":"int","default":10,"slider":{"min":0,"max":100,"step":1}},
+  "qq_native_enabled": {"description":"启用 QQ Official 原生消息","type":"bool","default":true,"hint":"仅 QQ Official 适配器生效；失败会自动回退。"},
+  "qq_native_ark_enabled": {"description":"启用 QQ Ark 卡片","type":"bool","default":true},
+  "qq_ark_template_id": {"description":"QQ Ark 模板 ID","type":"int","default":0,"hint":"在 QQ 开放平台申请并配置模板后填写。0=不使用。"},
+  "qq_ark_kv_json": {"description":"QQ Ark 自定义 KV JSON","type":"string","default":"","hint":"例如：{\"#METACOVER#\":\"https://...\"}。为空则使用插件默认 KV。"},
+  "qq_native_keyboard_enabled": {"description":"启用 QQ Keyboard","type":"bool","default":true},
+  "qq_keyboard_template_id": {"description":"QQ Keyboard 模板 ID","type":"string","default":"","hint":"填写 QQ 开放平台键盘模板 ID；为空则自动回退 Markdown。"}
 }
