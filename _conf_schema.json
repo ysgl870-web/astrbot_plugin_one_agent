@@ -3,7 +3,7 @@
     "description": "启用待办插件",
     "type": "bool",
     "default": true,
-    "hint": "关闭后插件指令和自动提醒均暂停。"
+    "hint": "关闭后指令与自动提醒均暂停。"
   },
   "default_priority": {
     "description": "默认优先级",
@@ -11,7 +11,7 @@
     "default": "中",
     "options": ["高", "中", "低"],
     "labels": ["高", "中", "低"],
-    "hint": "用户添加待办时没有指定优先级，则使用此值。"
+    "hint": "用户没有指定优先级时使用此值。"
   },
   "max_todos": {
     "description": "单会话最大待办数量",
@@ -23,7 +23,7 @@
     "description": "启用自助代办",
     "type": "bool",
     "default": true,
-    "hint": "允许用户使用“自助代办”自动认领一项未认领任务。"
+    "hint": "允许用户使用“自助代办”认领一项未认领任务。"
   },
   "reminder_enabled": {
     "description": "启用提醒系统",
@@ -35,6 +35,6 @@
     "description": "默认每日提醒时间",
     "type": "string",
     "default": "18:00",
-    "hint": "新会话首次启用每日提醒时使用的默认时间，格式为 HH:MM。"
+    "hint": "新会话首次开启每日提醒时使用的默认时间。"
   }
 }
