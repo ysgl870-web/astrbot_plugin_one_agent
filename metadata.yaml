@@ -1,28 +1,24 @@
 name: astrbot_plugin_one_agent
 display_name: 待办事项与提醒
-desc: 稳定的 AstrBot 待办管理插件，支持列表序号、稳定 ID、优先级、截止时间、单项提醒、每日提醒、搜索、统计和自助代办。
-short_desc: 待办、完成、截止、提醒、统计、自助代办一站式管理。
+desc: 实用的待办事项、提醒、图片菜单与管理员控制插件，支持群聊/私聊会话隔离、永久 ID、定时提醒和管理员权限控制。
+short_desc: 待办 + 定时提醒 + 图片菜单 + 管理员控制
 help: |
-  指令示例：
-  - 代办 测试 高
-  - 待办列表
-  - 完成 1
-  - 完成 #1
-  - 撤销完成 1
-  - 编辑 1 修改后的内容
-  - 优先级 1 高
-  - 截止 1 2026-10-06 18:00
-  - 提醒 1 30分钟
-  - 今日待办 / 逾期待办 / 我的待办
-  - 搜索待办 关键词
-  - 完成率 / 待办统计
-  - 自助代办 / 放弃代办 1
-  - 删除 1
-  - 清空待办 -> 确认清空
-  - 每日提醒 18:00 / 取消每日提醒
-version: 2.1.0
+  常用指令：
+  - 待办 <内容> [高/中/低]：添加待办
+  - 待办列表：查看列表
+  - 完成 <序号>：完成当前列表中的第 N 项
+  - 完成 #12：按永久 ID 精确完成
+  - 删除 <序号>：删除待办
+  - 今日待办：查看今天的任务
+  - 完成率：查看统计
+  - 提醒 <编号> <时间>：设置提醒，如“提醒 1 18:30”
+  - 取消提醒 <编号>：取消提醒
+  - 代办菜单：显示文字/图片菜单（可在配置中选择）
+  - 管理面板：管理员专用
+  - 管理设置：管理员专用
+version: 2.2.0
 author: ysgl
-repo: "https://github.com/ysgl870-web/astrbot_plugin_one_agent"
+repo: https://github.com/ysgl870-web/astrbot_plugin_one_agent
 support_platforms:
   - aiocqhttp
   - qq_official
@@ -30,4 +26,4 @@ support_platforms:
   - telegram
   - discord
   - kook
-astrbot_version: ">=4.16.0"
+astrbot_version: ">=4.16,<5"
